@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 
 <html>
-
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="./css/login.css">
+    </head>
     <body>
         <form action="" method="POST">
-            <div>
-                <label>Username: </label>
-                <input type="text" name="" placeholder="Enter username">
+            <div id="inputs">
+                <div class="form">
+                    <label>Username: </label>
+                    <input class="text" type="text" name="" placeholder="Enter username">
+                </div>
+                <div class="form">
+                    <label>Password: </label>
+                    <input class="text" type="password" name="" placeholder="Enter password">
+                </div>
+                
+                <div id="login-button-div">
+                <input id="button" type="submit" name="" value ="Login">
+                </div>
             </div>
-            <div>
-                <label>Password: </label>
-                <input type="password" name="" placeholder="Enter password">
-            </div>
-                <input type="submit" name="" value ="Login">
         </form>
 
 
