@@ -1,0 +1,67 @@
+label {
+    font-family: Aero;
+    font-size: 25pt;;
+    background-color: aliceblue;
+    padding: 5px 10px; 
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.text   {
+    background: rgba(13, 20, 44, 0.8);
+    border: 0px;
+    color: aliceblue;  
+}
+
+::placeholder { 
+    color: #CECECE;
+    opacity: 1;
+  }
+
+
+  #button {
+    background-color: aliceblue;
+    color: rgba(13, 20, 44, 1.0);
+    font-size: 30pt;
+    font-weight:bold;
+    border: 0px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+
+#button:hover{
+    background-color: rgba(13, 20, 44, 1.0);
+    color: aliceblue;
+    border:0px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+input{
+    font-family: Aero;
+    font-size: 25pt;
+    margin-bottom: 20px;
+    padding: 5px 10px;  
+}
+
+#login-button-div   {
+    display: flex; 
+    justify-content: center;
+}
+
+
+
+.form   {
+    text-align: center;
+}
+
+#inputs {
+    margin: 20% 20%;
+}
+
+
+body  {
+ background: url(../img/866487-most-popular-street-racing-wallpaper-1920x1080-phone.jpg) no-repeat center center fixed;;
+ background-size: cover;
+}
