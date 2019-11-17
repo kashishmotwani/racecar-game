@@ -1,4 +1,4 @@
-var context, controller, rectangle, loop;
+var context, inputHandler, rectangle, loop;
 
 context = document.querySelector("canvas").getContext("2d");
 
@@ -27,13 +27,13 @@ loop = function() {
       context.fill();
   };
 
-  var redCar = new Image();
-  redCar.src = "red-car.png"; 
-  redCar.onload = function(){
-      rectangle.fillStyle();
-  }
+  //var redCar = new Image();
+  //redCar.src = "red-car.png"; 
+  //redCar.onload = function(){
+  //    rectangle.fillStyle();
+  //}
   context.fillRect(0, 0, 1200, 800);// x, y, width, height
-  context.fillStyle = "white";// hex for red
+  context.fillStyle = "white";
   context.beginPath();
   context.rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
   context.fill();
@@ -43,6 +43,6 @@ loop = function() {
 
 };
 
-window.addEventListener("keydown", controller.keyListener) //press down and it moves
-window.addEventListener("keyup", controller.keyListener);  //lift finger and it stops
+window.addEventListener("keydown", inputHandler.keyListener) //press down and it moves
+window.addEventListener("keyup", inputHandler.keyListener);  //lift finger and it stops
 window.requestAnimationFrame(loop);
