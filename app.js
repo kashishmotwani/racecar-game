@@ -58,6 +58,7 @@ app.post('/register',urlencodedParser,function(req,res)	{
 	let pwd = req.body.pass;  //  change the code to get data from req.body
 	let rePwd = req.body.repass;
 	let sql= "INSERT INTO accounts VALUES ('" + username + "' , '" + pwd + "' , 0);";
+	let userCheck = "select * from accounts where username ='" + username + "';";
 	if(pwd === rePwd)	{
 			connection.query(sql);	
 			console.log("Signup successful!");//-> game init screen 
