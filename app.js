@@ -37,12 +37,12 @@ app.post('/auth',urlencodedParser,function(req,res)	{
 	
 	let username = req.body.username;  // change the code to get data from req.body
     let pwd = req.body.password;  //  change the code to get data from req.body
-    let sql= "select * from accounts where username ='" +username + "' AND password='" + pwd + "';";
+    let sql= "select * from accounts where username ='" + username + "' AND password='" + pwd + "';";
     connection.query(sql, function(error,results) {
      console.log(results.length);
      if (results.length>0)	{
-         res.sendFile(__dirname+'/car-movement.html') //-> game init screen 
-	 }
+		res.sendFile(__dirname+'/car-movement-2.html') //-> game init screen
+	}
 
 	 else	{
 		 res.send("Wrong username/password.");
@@ -55,21 +55,18 @@ app.post('/auth',urlencodedParser,function(req,res)	{
 app.post('/register',urlencodedParser,function(req,res)	{
 	
 	let username = req.body.username;  // change the code to get data from req.body
-	let pwd = req.body.password;  //  change the code to get data from req.body
-	let rePwd = req.body.re-password;
-	let sql= "INSERT INTO 'accounts' (`username`, `password`, `points`) VALUES ('" + username + "' , '" + pwd + "' , 0);";
-	connection.query(sql, function(error,results) {
-	 //console.log(results.length);
-	 if (pwd === rePwd)	{
+	let pwd = req.body.pass;  //  change the code to get data from req.body
+	let rePwd = req.body.repass;
+	let sql= "INSERT INTO accounts VALUES ('" + username + "' , '" + pwd + "' , 0);";
+	if(pwd === rePwd)	{
+			connection.query(sql);	
 			console.log("Signup successful!");//-> game init screen 
-	 }
-
-	 else	{
-		 res.send("Passwords don't match.");
-	 }
-	});
-
-}); 
+			res.sendFile(__dirname+'/car-movement-2.html');
+	}
+	else	{
+			res.send("Passwords don't match.")
+	}
+});
 
 /*	console.log(req.body.username);
 	 let username=req.body.username;
