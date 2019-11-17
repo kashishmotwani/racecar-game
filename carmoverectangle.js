@@ -1,20 +1,20 @@
 /* to be looped for the car to be appear to be moving */
 
 // if the upper key is pressed
-  if (controller.up) {
+  if (inputHandler.up) {
     rectangle.y_velocity -= 0.5;
   }
 
   // if the left key is pressed
-  if (controller.left) {
+  if (inputHandler.left) {
     rectangle.x_velocity -= 0.5;
   }
   // if the right key is pressed
-  if (controller.right) {
+  if (inputHandler.right) {
     rectangle.x_velocity += 0.5;
   }
   // if the down key is pressed
-  if (controller.down) {
+  if (inputHandler.down) {
     rectangle.y_velocity += 0.5;
   }
 
