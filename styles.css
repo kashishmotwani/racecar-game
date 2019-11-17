@@ -1,0 +1,9 @@
+#car {
+    left: 5%;
+    right: 5%;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    max-width:10%;
+    height:auto;
+    }
