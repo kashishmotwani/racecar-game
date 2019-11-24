@@ -41,8 +41,7 @@ connection.connect(function(err){
          if (results.length>0)	{
             res.sendFile(__dirname+'/client/index.html') //-> game init screen
         }
-    
-         else	{
+        else	{
              res.sendFile(__dirname+'/client/wrong/wrongLogin.html');
          }
         });
@@ -58,8 +57,8 @@ connection.connect(function(err){
         let rePwd = req.body.repass;
         let sql= "INSERT INTO accounts VALUES ('" + username + "' , '" + pwd + "' , 0);";
         let userCheck = "select * from accounts where username ='" + username + "';";
-        if(pwd === rePwd)	{
-                connection.query(sql);	
+        if(pwd === rePwd && pwd !== "" && rePwd !== "")	{
+                connection.query(sql);
                 console.log("Signup successful!");//-> game init screen 
                 res.sendFile(__dirname+'/client/index.html');
         }
