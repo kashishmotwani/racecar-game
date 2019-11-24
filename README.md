@@ -13,7 +13,7 @@ Car-racing is a multiplayer game where the players are allowed to play against e
 ## Framework Used
 
 
-Built with
+Built with:
 
 - HTML
 - CSS
@@ -31,7 +31,7 @@ A simple car racing game, that allows multiple user to play on the same server a
 ## Launching the game
 
 
-The game can easily be launched by downloading the set files available on the repository and clicking on the index.html file.
+The game can easily be launched by downloading the set files available on the repository and clicking on the `index.html` file.
 
 
 
