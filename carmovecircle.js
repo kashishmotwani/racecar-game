@@ -2,29 +2,29 @@
 
 // if the upper key is pressed
   if (inputHandler.up) {
-    circle.y_velocity -= 0.5;
+    circle.y_speed -= 0.5;
   }
 
   // if the left key is pressed
   if (inputHandler.left) {
-    circle.x_velocity -= 0.5;
+    circle.x_speed -= 0.5;
   }
   // if the right key is pressed
   if (inputHandler.right) {
-    circle.x_velocity += 0.5;
+    circle.x_speed += 0.5;
   }
   // if the down key is pressed
   if (inputHandler.down) {
-    circle.y_velocity += 0.5;
+    circle.y_speed += 0.5;
   }
 
-  circle.x += circle.x_velocity;
-  circle.y += circle.y_velocity;
+  circle.x += circle.x_speed;
+  circle.y += circle.y_speed;
 
   // friction: used to decrease the speed gradually
   // so it behaves like a real car 
-  circle.x_velocity *= 0.9; 
-  circle.y_velocity *= 0.9;
+  circle.x_speed *= 0.9; 
+  circle.y_speed *= 0.9;
 
   // if circle is going off the left of the screen
   if (circle.x < -32) {
