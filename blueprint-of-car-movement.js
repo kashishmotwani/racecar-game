@@ -9,9 +9,9 @@ rectangle = {
   height:20, 
   width:20,
   x:180, // initial location of one of the players
-  x_velocity:0,
+  x_speed:0,
   y: 160,
-  y_velocity:0,
+  y_speed:0,
 };
 
 
@@ -27,11 +27,6 @@ loop = function() {
       context.fill();
   };
 
-  //var redCar = new Image();
-  //redCar.src = "red-car.png"; 
-  //redCar.onload = function(){
-  //    rectangle.fillStyle();
-  //}
   context.fillRect(0, 0, 1200, 800);// x, y, width, height
   context.fillStyle = "white";
   context.beginPath();
