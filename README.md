@@ -1,4 +1,4 @@
-Car-racing Game
+# Car-racing Game
 
 ---
 
@@ -6,13 +6,13 @@ Car-racing is a multiplayer game where the players are allowed to play against e
 
 
 
-Screenshots
+## Screenshots
 
 ---
 
 
 
-Framework Used
+## Framework Used
 
 ---
 
@@ -24,7 +24,7 @@ Built with
 - Node JS
   
 
-Features
+## Features
 
 ---
 
@@ -32,7 +32,7 @@ A simple car racing game, that allows multiple user to play on the same server a
 
 
 
-Launching the game
+## Launching the game
 
 ---
 
@@ -40,7 +40,7 @@ The game can easily be launched by downloading the set files available on the re
 
 
 
-Credits/Acknowledgments
+## Credits/Acknowledgments
 
 ---
 
