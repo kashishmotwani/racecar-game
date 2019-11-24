@@ -2,29 +2,29 @@
 
 // if the upper key is pressed
   if (inputHandler.up) {
-    triangle.y_velocity -= 0.5;
+    triangle.y_speed -= 0.5;
   }
 
   // if the left key is pressed
   if (inputHandler.left) {
-    triangle.x_velocity -= 0.5;
+    triangle.x_speed -= 0.5;
   }
   // if the right key is pressed
   if (inputHandler.right) {
-    triangle.x_velocity += 0.5;
+    triangle.x_speed += 0.5;
   }
   // if the down key is pressed
   if (inputHandler.down) {
-    triangle.y_velocity += 0.5;
+    triangle.y_speed += 0.5;
   }
 
-  triangle.x += triangle.x_velocity;
-  triangle.y += triangle.y_velocity;
+  triangle.x += triangle.x_speed;
+  triangle.y += triangle.y_speed;
 
   // friction: used to decrease the speed gradually
   // so it behaves like a real car 
-  triangle.x_velocity *= 0.9;
-  triangle.y_velocity *= 0.9;
+  triangle.x_speed *= 0.9;
+  triangle.y_speed *= 0.9;
 
   // if triangle is going off the left of the screen
   if (triangle.x < -32) {
