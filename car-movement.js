@@ -14,27 +14,27 @@ rectangle = {
   height:20,
   width:20,
   x:180, // location @ center of the canvas
-  x_velocity:0,
+  x_speed:0,
   y: 160,
-  y_velocity:0,
+  y_speed:0,
 };
 
 rectangle2 = {
   height:20,
   width:20,
   x:180, // location @ center of the canvas
-  x_velocity:0,
+  x_speed:0,
   y: 130,
-  y_velocity:0,
+  y_speed:0,
 };
 
 rectangle3 = {
   height:20,
   width:20,
   x:180,        // location @ center of the canvas; x-axis
-  x_velocity:0, // speed; x-axis
+  x_speed:0, // speed; x-axis
   y: 100,       // location @ center of the canvas; y-axis
-  y_velocity:0, // speed; x-axis
+  y_speed:0, // speed; x-axis
 };
 
 inputHandler = {
@@ -70,24 +70,24 @@ inputHandler = {
 loop = function() {
   
   if (inputHandler.up) {
-    rectangle.y_velocity -= 0.5;
+    rectangle.y_speed -= 0.5;
   }
 
   if (inputHandler.left) {
-    rectangle.x_velocity -= 0.5;
+    rectangle.x_speed -= 0.5;
   }
 
   if (inputHandler.right) {
-    rectangle.x_velocity += 0.5;
+    rectangle.x_speed += 0.5;
   }
 
   if (inputHandler.down) {
-    rectangle.y_velocity += 0.5;
+    rectangle.y_speed += 0.5;
   }
-  rectangle.x += rectangle.x_velocity;
-  rectangle.y += rectangle.y_velocity;
-  rectangle.x_velocity *= 0.9;// friction
-  rectangle.y_velocity *= 0.9;// friction
+  rectangle.x += rectangle.x_speed;
+  rectangle.y += rectangle.y_speed;
+  rectangle.x_speed *= 0.9;// friction
+  rectangle.y_speed *= 0.9;// friction
   //console.log("x is " + rectangle.x)
   //console.log("y is " + rectangle.y)
 
@@ -103,40 +103,40 @@ loop = function() {
   //955 -> x end of the 
   // boundaries
   if (rectangle.x <= 170) {
-    rectangle.x_velocity = 0
+    rectangle.x_speed = 0
     rectangle.x = 170
   } else if (rectangle.x >= 959.9) {
-    rectangle.x_velocity = 0
+    rectangle.x_speed = 0
     rectangle.x = 959.9
   }
   //else if (rectangle.x >= 959.9) {
-    //rectangle.x_velocity = -rectangle.x_velocity
+    //rectangle.x_speed = -rectangle.x_speed
    else if (rectangle.y < 40) {
-    rectangle.y_velocity = 0
+    rectangle.y_speed = 0
     rectangle.y = 40
   } else if (rectangle.y >= 714.9){
-    rectangle.y_velocity = 0
+    rectangle.y_speed = 0
     rectangle.y = 714.9}
-    /* you can leave the middle part with rectangle.x_velocity = -rectangle.x_velocity and make it as the hard part
+    /* you can leave the middle part with rectangle.x_speed = -rectangle.x_speed and make it as the hard part
     where the speed of the car decreases and all?
   } else if (rectangle.y >= 340) { //the rest
-    rectangle.y_velocity = 0
+    rectangle.y_speed = 0
     rectangle.y = 340
   } else if (rectangle.y >= 460) {
-    rectangle.y_velocity = 0
+    rectangle.y_speed = 0
     rectangle.y = 460
   } else if  (rectangle.y >= 340 && rectangle.x >= 180) {
-    rectangle.y_velocity = 0
+    rectangle.y_speed = 0
     rectangle.y = rectangle.y
     rectangle.x = rectangle.x 
     //rectangle.x = 180
   }else if (rectangle.y >= 340 && rectangle.y <= 460 && rectangle.x >= 180 && rectangle.x <= 719.5) {
-    rectangle.y_velocity = 0
-    rectangle.x_velocity = 0
+    rectangle.y_speed = 0
+    rectangle.x_speed = 0
     //rectangle.x = 719.5
   }*/
   //else if (rectangle.y >= 714.9) {
-    //rectangle.y_velocity = -rectangle.y_velocity
+    //rectangle.y_speed = -rectangle.y_speed
   
 
 
