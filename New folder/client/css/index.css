@@ -1,0 +1,39 @@
+html, body {
+  overflow: hidden;
+  background-color: black;
+}
+
+canvas  {
+  background: url(../img/race-track.png);
+  margin-left: 30%;
+  margin-right: 10%;
+}
+
+#fullsc   {
+    color: white;
+    font-family: Aero;
+    display: block;
+    text-align: center;
+    font-size: 22pt;
+    margin-top: 15px;
+}
+
+#blank  {
+    margin-top: 15px;
+}
+
+#image {
+  position:absolute;
+  top:0px;
+  left:0px;
+  z-index:-10;
+  }
+
+#points {
+  color: white;
+  font-family: Aero;
+  font-size: 20pt;
+  position: absolute;
+}
+
+

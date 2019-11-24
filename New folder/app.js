@@ -1,16 +1,87 @@
 var express = require('express');
 var app = express();
 var serv = require('http').Server(app);
- 
-app.get('/',function(req, res) {
-    res.sendFile(__dirname + '/client/index.html');
+var parser = require('body-parser');
+var urlencodedParser = parser.urlencoded({extended: false});
+var mysql = require('mysql');
+
+var connection = mysql.createConnection({
+	host     : 'localhost',
+	user     : 'root',
+	password : '',
+	database : 'login'
 });
-app.use('/client',express.static(__dirname + '/client'));
+
+
+connection.connect(function(err){
+	if(err) {
+		console.log("Error while connecting with database");		
+	} else {
+		console.log("Database is connected");
+		connection.query("select username, password from accounts")
+	}
+	});
+
+
+
+    app.get('/',function(req, res)	{
+        res.sendFile(__dirname+'/client/login.html');
+        console.log(__dirname);
+    });
+    app.use('/client',express.static(__dirname + '/client'));
  
+
+    app.post('/auth',urlencodedParser,function(req,res)	{
+	
+        let username = req.body.username;  // change the code to get data from req.body
+        let pwd = req.body.password;  //  change the code to get data from req.body
+        let sql= "select * from accounts where username ='" + username + "' AND password='" + pwd + "';";
+        connection.query(sql, function(error,results) {
+         console.log(results.length);
+         if (results.length>0)	{
+            res.sendFile(__dirname+'/client/index.html') //-> game init screen
+        }
+    
+         else	{
+             res.sendFile(__dirname+'/client/wrong/wrongLogin.html');
+         }
+        });
+    
+    });
+
+    
+
+    app.post('/register',urlencodedParser,function(req,res)	{
+	
+        let username = req.body.username;  // change the code to get data from req.body
+        let pwd = req.body.pass;  //  change the code to get data from req.body
+        let rePwd = req.body.repass;
+        let sql= "INSERT INTO accounts VALUES ('" + username + "' , '" + pwd + "' , 0);";
+        let userCheck = "select * from accounts where username ='" + username + "';";
+        if(pwd === rePwd)	{
+                connection.query(sql);	
+                console.log("Signup successful!");//-> game init screen 
+                res.sendFile(__dirname+'/client/index.html');
+        }
+        else	{
+                res.sendFile(__dirname+'/client/wrong/wrongSignUp.html')
+        }
+    });
+
+    
+app.use('/client',express.static(__dirname+'/client'));
+app.use(express.static(__dirname));
+app.use('/client',express.static(__dirname+'/client'));
+app.use(express.static(__dirname+'/client'));
+
+
 serv.listen(2000);
 console.log("Server started.");
 
- 
+
+
+
+
 var SOCKET_LIST = {};
 
 var Entity = function() {
@@ -37,13 +108,13 @@ var Entity = function() {
 
 var Player = function(id){
     var self = Entity();
-    self.id:id;
+ /*   self.id : id;
         self.number:"" + Math.floor(10 * Math.random());
         self.pressingRight:false;
         self.pressingLeft:false;
         self.pressingUp:false;
         self.pressingDown:false;
-        self.maxSpd:10;
+        self.maxSpd:10;         */
     var super_update = self.update;
     self.update = function() {
 	self.updateSpd();
@@ -67,7 +138,7 @@ var Player = function(id){
     }
     Player.list[socket.id] = player;
     return self;
-}
+}   
 Player.list = {};
 Player.onConnect = function(socket){
 	var player = Player(socket.id);
