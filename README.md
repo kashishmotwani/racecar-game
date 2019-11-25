@@ -25,7 +25,7 @@ Built with:
 ## Screenshots
 
 ![Log in page](https://github.com/kashishmotwani/racecar-game/blob/master/img/log%20in%20page.jpeg)
-
+![game ss](https://github.com/kashishmotwani/racecar-game/blob/master/img/Screenshot%20(23).png)
 
 ## Features
 
