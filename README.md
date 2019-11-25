@@ -42,7 +42,7 @@ The game can easily be launched by downloading the set files available on the re
   3. Node JS installed locally on the device that will allow for the multi-player capability.
   
   ##### How to play
-  Use the arrow keys on your keyboard to control the movements of the car. Follow the race track until the finish line (that is the same position where the car started at). The points will be split amongst the users in a game session. First arrivals get 3 points, cars that come in second position get 2 points and lastly cars that come in last will be awarded 1 point.
+  Use the arrow keys on your keyboard to control the movements of the car. Follow the race track until the finish line (that is the same position where the car started at). The points will be split amongst the users in a game session. First arrivals get 3 points, cars that come in second position get 0 points and if there exist any third players, their cars that come in last will be awarded 0 points.
 
 ## Status
 
